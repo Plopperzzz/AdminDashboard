@@ -42,7 +42,7 @@ body{
     height: 100vh;
 
     resize: both;
-    grid-template: 1fr 10fr / 1fr 4fr;
+    grid-template: 1fr 10fr / 1fr 15fr;
 }
 
 .header{
@@ -56,10 +56,10 @@ body{
     grid-column: 1/2;
     grid-row:1/3;
 
+    background-color: var(--lm-primary);
     color: var(--lm-light-font);
     font-family: "roboto";
 
-    background-color: var(--lm-primary);
     display: grid;
     grid-template-rows: 1fr 3fr 2fr 8fr;
 }
@@ -74,7 +74,7 @@ body{
     color: var(--lm-light-font);
 
     display: flex;
-    gap: var(--small-gap);
+    gap: 1rem;
     align-items: center;
     padding: 1rem;
 }
@@ -87,11 +87,12 @@ body{
 
 .menu-item{
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 1rem;
-    padding: 0 1rem;
+    gap: 2.5rem;
+    padding: 0 1.5rem;
 
-    font-weight: bold;
+    font-weight: 100;
 }
 
 .menu-item svg {
@@ -111,6 +112,7 @@ body{
     padding: 0;
     margin: 0;
     list-style-type: none;
+    align-self: end;
 }
 
 .side-bar li{
@@ -119,7 +121,17 @@ body{
 
     justify-content: flex-start;
 
-    margin-left: 1rem;
+    margin: 1rem;
+
+}
+
+.secondary{
+    grid-row-start: 4;
+    align-self: end;
+}
+
+.secondary li{
+    align-items: end;
 }
 
 .content{
