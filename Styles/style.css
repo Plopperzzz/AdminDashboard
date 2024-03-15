@@ -27,6 +27,22 @@
     --dm-highlight-2: #00B2B0;
     --dm-light-font: rgb(236, 229, 229);
     --dm-dark-font: rgb(41, 38, 38);
+
+    /* lengths */
+    --card-height: 250px;
+    --card-width: 350px;
+    --gap: 20px;
+    --button-width: 5rem;
+    --small-gap: 1rem;
+    --gap: 2rem;
+    --large-gap: 3rem;
+    --small-margin: 1rem;
+    --margin: 2rem;
+    --large-margin: 3rem;
+    --frac-space: 1.5rem;
+    --small-pad: 1rem;
+    --pad: 2rem;
+    --large-pad: 3rem;
 }
 
 html,
@@ -68,17 +84,17 @@ body {
 
 .header .search-bar-container{
     display: flex;
-    padding: 1rem;
+    padding: var(--small-pad);
     align-items: center;
     justify-content: space-between;
     margin-top: 0.5rem;
-    margin-left: 1.5rem;
+    margin-left: var(--frac-space);
 }
 
 .search-bar {
     display: flex;
     justify-content: flex-start;
-    gap: 1rem;
+    gap: var(--gap);
 }
 
 .search-bar svg path {
@@ -92,7 +108,7 @@ body {
     border:none;
     border-radius: 1rem;
 
-    padding-left: 1rem;
+    padding-left: var(--small-pad);
     width: 1rem;
 
     transition: width 0.35s;
@@ -112,13 +128,13 @@ body {
 
 .secondary-header{
     display: grid;
-    padding: 1rem;
+    padding: var(--small-pad);
     grid-template-columns: 1fr 1fr;
 }
 
 .button-container{
     display: flex;
-    gap: 2rem;
+    gap: var(--gap);
     justify-self: end;
     align-self: center;
     margin-right: 3rem;
@@ -127,7 +143,7 @@ body {
 .btn{
     font-size: var(--small);
     color: var(--lm-light-font);
-    width: 5rem;
+    width: var(--button-width);
     padding: 10px 15px 10px;
 
     border: none;
@@ -147,7 +163,7 @@ body {
     gap: 1.5rem;
     flex-shrink: 0;
     align-items: center;
-    margin-right: 3rem;
+    margin-right: var(--large-margin);
 }
 
 .name-small {
@@ -185,10 +201,10 @@ body {
     color: var(--lm-light-font);
 
     display: flex;
-    gap: 1rem;
+    gap: var(--small-gap);
     align-items: center;
     align-self: center;
-    padding: 1rem;
+    padding: var(--small-pad);
 }
 
 .header svg {
@@ -204,7 +220,7 @@ body {
 .menu-item {
     display: flex;
     align-items: center;
-    gap: 1.51rem;
+    gap: var(--frac-space);
     padding: 0 1.5rem;
 
     width: 100%;
@@ -244,7 +260,7 @@ body {
 
 .side-bar li {
     display: flex;
-    margin: 1rem 0;
+    margin: var(--small-margin) 0;
     align-items: center;
 
     justify-content: flex-start;
@@ -277,23 +293,48 @@ body {
 }
 
 .sub-header {
+    grid-column: 1/2;
+    grid-row: 1/2;
+
     font-family: "roboto";
     font-weight: bold;
     font-size: var(--medium);
     color: var(--lm-dark-font);
 
     align-self: start;
-    margin: 2rem 1rem 0;
+    margin: var(--margin) var(--small-margin) 0;
 }
 
 .card-container {
-    grid-column: 2/3;
-    grid-row: 1/2;
+    grid-column: 1/2;
+    grid-row: 2/3;
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(var(--card-width), 1fr));
+    grid-auto-rows: calc(var(--card-height) + var(--gap));
+    padding: var(--small-pad);
 }
 
 .card {
+    background-color: var(--lm-highlight-2);
+    height: var(--card-height);
+    /*box-shadow:10px 0px 0px orange;*/
+    border-radius: 8px;
 
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+
+.card::before{
+    position: absolute;
+    top: 0;
+    left: -10px;
+    width: 100px;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
 }
