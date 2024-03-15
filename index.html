@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Styles/style.css">
     <link rel="stylesheet" href="./Styles/font.css">
+    <link rel="icon" href="./Assets/SVG/view-dashboard.svg" sizes="any" type="img/svg+xml">
     <script src="./JavaScript/script.js" defer></script>
     <title>Admin Dashboard</title>
 </head>
@@ -13,7 +14,39 @@
 <body>
     <div class="grid-container" name="gridContainer">
         <div class="header" name="header">
-            header
+            <div class="search-bar-container">
+                <div class="search-bar">
+                    <svg style="max-width: 100px;" xmlns="http://www.w3.org/2000/svg" viewBox="-40 -40 2088 2088">
+                        <path
+                            d="M1344 0q97 0 187 25t168 71 142 110 111 143 71 168 25 187q0 97-25 187t-71 168-110 142-143 111-168 71-187 25q-125 0-239-42t-211-121l-785 784q-19 19-45 19t-45-19-19-45q0-26 19-45l784-785q-79-96-121-210t-42-240q0-97 25-187t71-168 110-142T989 96t168-71 187-25zm0 1280q119 0 224-45t183-124 123-183 46-224q0-119-45-224t-124-183-183-123-224-46q-119 0-224 45T937 297 814 480t-46 224q0 119 45 224t124 183 183 123 224 46z"
+                            fill="#333333"></path>
+                    </svg>
+                    <input type="text">
+                </div>
+                <div class="alert-container">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 -10 2048 2048" style="max-height:100px">
+                        <path
+                            d="M1792 1536v128h-512q0 53-20 99t-55 82-81 55-100 20q-53 0-99-20t-82-55-55-81-20-100H256v-128h128V768q0-88 23-170t64-153 100-129 130-100 153-65 170-23q88 0 170 23t153 64 129 100 100 130 65 153 23 170v768h128zm-256 0V768q0-106-40-199t-110-162-163-110-199-41q-106 0-199 40T663 406 553 569t-41 199v768h1024zm-512 256q27 0 50-10t40-27 28-41 10-50H896q0 27 10 50t27 40 41 28 50 10z"></path>
+                    </svg>
+                    <div class="profile-pic-small"></div>
+                    <div class="name-small">Morgan Oakley</div>
+                </div>
+            </div>
+            <div class="secondary-header">
+                <div class="user-info-container">
+                    <div class="profile-pic-large"></div>
+                    <div class="greeting-container">
+                        <div class="greeting"></div>
+                        <div class="name"></div>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button class="btn">New</button>
+                    <button class="btn">Upload</button>
+                    <button class="btn">Share</button>
+                </div>
+            </div>
         </div>
         <div class="side-bar" name="sideBar">
             <div class="logo">
@@ -99,7 +132,8 @@
                     <div class="menu-item">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048">
                             <path
-                                d="M960 0q132 0 255 34t229 97 194 150 150 194 97 230 35 255q0 132-34 255t-97 229-150 194-194 150-230 97-255 35q-132 0-255-34t-229-97-194-150-150-194-97-229T0 960q0-132 34-255t97-229 150-194 194-150 229-97T960 0zm64 1408H896v128h128v-128zm8-169q0-37 7-70t36-62q39-39 77-74t68-75 49-85 19-105q0-68-26-127t-70-104-104-71-128-26q-68 0-127 26t-104 70-71 104-26 128h144q0-38 14-71t40-59 58-39 72-15q38 0 71 14t59 40 39 58 15 72q0 41-19 73t-47 61-62 60-61 66-48 81-19 107v64h144v-41z"></path>
+                                d="M960 0q132 0 255 34t229 97 194 150 150 194 97 230 35 255q0 132-34 255t-97 229-150 194-194 150-230 97-255 35q-132 0-255-34t-229-97-194-150-150-194-97-229T0 960q0-132 34-255t97-229 150-194 194-150 229-97T960 0zm64 1408H896v128h128v-128zm8-169q0-37 7-70t36-62q39-39 77-74t68-75 49-85 19-105q0-68-26-127t-70-104-104-71-128-26q-68 0-127 26t-104 70-71 104-26 128h144q0-38 14-71t40-59 58-39 72-15q38 0 71 14t59 40 39 58 15 72q0 41-19 73t-47 61-62 60-61 66-48 81-19 107v64h144v-41z">
+                            </path>
                         </svg>
                         <div class="item">Support</div>
                     </div>
@@ -108,8 +142,8 @@
                     <div class="menu-item">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048">
                             <path
-                                d="M1920 256v512q0 151-38 285t-105 253-158 223-198 195-224 171-237 150q-119-70-236-149t-224-171-198-196-159-223-105-253T0 768V256q83 0 161-6t152-22 146-45 144-75q85-55 170-81T960 0q51 0 97 6t89 20 86 34 85 48q72 46 144 75t146 45 152 22 161 6zm-128 512V382q-149-8-285-48t-263-121q-68-44-135-64t-149-21q-81 0-148 20t-136 65q-126 81-262 121t-286 48v386q0 127 33 244t92 222 138 200 172 178 193 155 204 130q102-59 203-130t194-154 172-178 138-200 91-223 34-244zM960 320q66 0 124 25t101 69 69 102 26 124v128h128v640H512V768h128V640q0-66 25-124t68-101 102-69 125-26zm320 960V896H640v384h640zM768 768h384V640q0-40-15-75t-41-61-61-41-75-15q-40 0-75 15t-61 41-41 61-15 75v128z"
-                                ></path>
+                                d="M1920 256v512q0 151-38 285t-105 253-158 223-198 195-224 171-237 150q-119-70-236-149t-224-171-198-196-159-223-105-253T0 768V256q83 0 161-6t152-22 146-45 144-75q85-55 170-81T960 0q51 0 97 6t89 20 86 34 85 48q72 46 144 75t146 45 152 22 161 6zm-128 512V382q-149-8-285-48t-263-121q-68-44-135-64t-149-21q-81 0-148 20t-136 65q-126 81-262 121t-286 48v386q0 127 33 244t92 222 138 200 172 178 193 155 204 130q102-59 203-130t194-154 172-178 138-200 91-223 34-244zM960 320q66 0 124 25t101 69 69 102 26 124v128h128v640H512V768h128V640q0-66 25-124t68-101 102-69 125-26zm320 960V896H640v384h640zM768 768h384V640q0-40-15-75t-41-61-61-41-75-15q-40 0-75 15t-61 41-41 61-15 75v128z">
+                            </path>
                         </svg>
                         <div class="item">Privacy</div>
                     </div>
@@ -117,7 +151,7 @@
             </ul>
         </div>
         <div class="content" name="content">
-            content
+            <div class="sub-header">Your Projects</div>
         </div>
 
     </div>
